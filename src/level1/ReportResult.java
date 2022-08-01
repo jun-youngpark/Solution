@@ -1,7 +1,6 @@
 package level1;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class ReportResult {
 
@@ -24,12 +23,13 @@ public class ReportResult {
                 repotedCount.put(reported, repotedCount.get(reported) + 1);
             }
         }
-
         int[] answer = new int[id_list.length];
-        for(String repotered : repotedCount.keySet()){
-            if(repotedCount.get(repotered) >= k){
-                for (int i=0;i<id_list.length;i++) {
-                    if(reporterInfoMap.get(id_list[i]).contains(repotered)){
+
+        for(String key : repotedCount.keySet()){
+            int value = repotedCount.get(key);
+            if(value >= k){
+                for (int i=0 ; i<id_list.length ;i++) {
+                    if(reporterInfoMap.get(id_list[i]).contains(key)){
                         answer[i] = answer[i] + 1;
                     }
                 }
@@ -44,7 +44,7 @@ public class ReportResult {
         ReportResult rpt =new ReportResult();
         String[] id_list = {"muzi", "frodo", "apeach", "neo"};
         String[] report = {"muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"};
-        int k=3;
+        int k=2;
         rpt.solution(id_list,report,k);
         //rpt.solution(["muzi", "frodo", "apeach", "neo"],["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"],2);
     }
