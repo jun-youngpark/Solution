@@ -36,7 +36,7 @@ public class Collect {
                 .collect(Collectors.partitioningBy(Student::isMale));
         System.out.println(studentBySex.get(true));
         System.out.println(studentBySex.get(true).stream().map(Student::getName).collect(Collectors.joining(",")));
-
+ 
         //partitioningBy()를 중첩하여 이중 분할을 할 수도 있음
         Map<Boolean, Map<Boolean, List<Student>>> failedStudentBySex = collect1.makeStudent()
                 .collect(Collectors.partitioningBy(Student::isMale,
