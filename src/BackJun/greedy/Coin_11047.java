@@ -24,7 +24,7 @@ public class Coin_11047 {
         for(int i=coin.length -1 ;i>=0; i--){
             if(coin[i] <= K) {
                 // 현재 가치의 동전으로 구성할 수 있는 개수를 더해준다.
-                count += (K / coin[i]);
+                count += Math.abs(K / coin[i]);
                 K = K % coin[i];
             }
         }
