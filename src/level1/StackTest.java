@@ -26,6 +26,6 @@ public class StackTest {
 
     public static void main(String[] args) {
         StackTest main = new StackTest();
-        main.solution();
+        main.solution("");
     }
 }
