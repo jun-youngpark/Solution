@@ -6,8 +6,6 @@ package level2;
 * 한쪽은 계속해서 더하기
 * 한쪽은 계속해서 빼기
 *
-*
-*
 * */
 public class TargetNumber {
 
